@@ -20,6 +20,24 @@ it('Should square a number', () => {
         .toBeA('number');
 });
 
+it('Should async add two numbers', done => {
+    utils.asyncAdd(5, 2, (sum) => {
+        expect(sum)
+            .toBe(7)
+            .toBeA('number');
+
+        done();
+    });
+});
+
+it('Should async square a number', done => {
+    utils.asyncSquare(9, (square) => {
+        expect(square).toBe(81);
+
+        done();
+    });
+});
+
 it('Should verify first name and last name are set', () => {
     let result = utils.setName({}, "Eksa Pramindanata");
     
